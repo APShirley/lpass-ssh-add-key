@@ -1,0 +1,4 @@
+## Load an ssh-key for github from lastpass on Mac OS X
+
+  - Requires lastpass cli (`brew install lastpass-cli`)
+  - The key should be of type ssh-key in Lastpass
