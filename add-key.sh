@@ -26,9 +26,6 @@ main() {
   lpass status
   fetch-ssh-private-key
 
-  echo "Deleting all existing ssh-keys from agent."
-  ssh-add -D
-
   set +u
   echo "How many hours? (leave empty to add key until: $(date -v 17H -v 30M))"
   read hours
@@ -40,6 +37,10 @@ main() {
     echo "Adding key for ${hours} hours"
     ssh-add -t "${hours}"h /tmp/ssh-key
   fi
+
+  echo "Deleting all existing ssh-keys from agent."
+  ssh-add -D
+  
   set -u
   rm /tmp/ssh-key
 }
